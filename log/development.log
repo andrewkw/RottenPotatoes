@@ -28,3 +28,96 @@ Migrating to CreateMovies (20111119180638)
   [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111119180638')[0m
   [1m[35m (1.9ms)[0m  commit transaction
   [1m[36m (1.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-10-06 12:59:04 -0700
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (16ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-10-06 12:59:10 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (55.9ms)
+Compiled application.css  (0ms)  (pid 15279)
+Compiled jquery.js  (2ms)  (pid 15279)
+Compiled jquery_ujs.js  (0ms)  (pid 15279)
+Compiled application.js  (134ms)  (pid 15279)
+Completed 200 OK in 407ms (Views: 400.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-06 12:59:11 -0700
+Served asset /application.css - 200 OK (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-06 12:59:11 -0700
+Served asset /jquery.js - 200 OK (47ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-06 12:59:11 -0700
+Served asset /jquery_ujs.js - 200 OK (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-06 12:59:11 -0700
+Served asset /application.js - 200 OK (61ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-10-06 13:54:46 -0700
+Connecting to database specified by database.yml
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (96.9ms)
+Completed 200 OK in 521ms (Views: 437.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-10-06 14:02:20 -0700
+Connecting to database specified by database.yml
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (76.5ms)
+Completed 500 Internal Server Error in 168ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: 
+    4: = form_tag movies_path, :id=>"ratings_form", :method => :get do
+    5:   Include: 
+    6:   - @all_ratings.each do |rating|
+    7:     = rating
+    8:     = check_box_tag "ratings[#{rating}]", rating, ((@filter_ratings.length == 0) || (@filter_ratings.grep(/^#{rating}$/).length > 0))
+    9:   = submit_tag 'Refresh', :id=>"ratings_submit"
+  app/views/movies/index.html.haml:6:in `block in _app_views_movies_index_html_haml__475274712_90362530'
+  app/views/movies/index.html.haml:4:in `_app_views_movies_index_html_haml__475274712_90362530'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (56.9ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-10-06 14:04:31 -0700
+Connecting to database specified by database.yml
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (9.0ms)
+Completed 200 OK in 142ms (Views: 125.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-06 14:04:33 -0700
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-06 14:04:33 -0700
+Served asset /jquery.js - 304 Not Modified (37ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-06 14:04:33 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-06 14:04:33 -0700
+Served asset /application.js - 304 Not Modified (49ms)
+Connecting to database specified by database.yml
+  [1m[36m (36.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMovies (20111119180638)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
