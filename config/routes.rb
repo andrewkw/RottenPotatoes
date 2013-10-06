@@ -1,4 +1,4 @@
-Rottenpotatoes::Application.routes.draw do |map|
+Rottenpotatoes::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -12,7 +12,7 @@ Rottenpotatoes::Application.routes.draw do |map|
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  map.resources :movies
+  resources :movies
 
   # Sample resource route with options:
   #   resources :products do
